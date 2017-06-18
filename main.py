@@ -2,6 +2,7 @@ from uiautomator import device as d
 import apps
 import androidSystem
 import time
+import log
 
 INSTALL_RES_ID = "com.android.vending:id/buy_button"
 ACCEPT_RES_ID = "com.android.vending:id/continue_button"
@@ -20,7 +21,7 @@ def log_duration(block, *args):
 	start_time = time.time()
 	block(*args)
 	current_time = time.time()
-	print 'Time taken (s) : {:.3f}'.format(current_time - start_time)
+	log.debug('Time taken (s) : {:.3f}'.format(current_time - start_time))
  
 def install():
 	d.watcher("INSTALL").when(resourceId=INSTALL_RES_ID).click(resourceId=INSTALL_RES_ID)
@@ -48,11 +49,11 @@ def install_app_with_package_name(app):
 		log_duration(wait_for_resource, TITLE_BG_RES_ID, 5000)
 
 		if d.exists(text=INCOMPATIBLE_DEVICE_ERROR):
-			print INCOMPATIBLE_DEVICE_ERROR
+			log.error(INCOMPATIBLE_DEVICE_ERROR)
 			break
 
 		if d.exists(text=APP_NOT_FOUND_ERROR):
-			print APP_NOT_FOUND_ERROR
+			log.warn(APP_NOT_FOUND_ERROR)
 			break
 
 		if not d.exists(resourceId=OPEN_RES_ID):
@@ -61,20 +62,18 @@ def install_app_with_package_name(app):
 				accept()
 				if d.exists(resourceId=CANCEL_DOWNLOAD_RES_ID):
 					log_duration(wait_for_resource, UNINSTALL_RES_ID, 60000)
-					print '{} was installed successfully.'.format(app.name())
+					log.info('{} was installed successfully.'.format(app.name()))
 					break
 
 			elif d.exists(resourceId=UPDATE_RES_ID):
 				update()
 		else:
-			print '{} is already installed and updated.'.format(app.name())
+			log.info('{} is already installed and updated.'.format(app.name()))
 			break
 	 
 		d.press.back()
-		print 'Retry count for {}: {}'.format(app.name(), count)
+		log.debug('Retrying for {}'.format(app.name()))
 
 for app in apps.all():
-	print "---------------------"
 	print 'Installing {}'.format(app.name())
-	print "---------------------"
    	install_app_with_package_name(app)
