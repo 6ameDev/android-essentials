@@ -1,6 +1,7 @@
 import app
 
 COLLECTION = [	app.App("Facebook Lite", "market://details?id=com.facebook.lite"),
+				app.App("Gmail", "market://details?id=com.google.android.gm"),
 				app.App("Snapchat", "market://details?id=com.snapchat.android"),
 				app.App("Non Existent", "market://details?id=com.does.not.exist")]
 

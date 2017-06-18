@@ -42,17 +42,19 @@ def accept():
 	d.watchers.run()
 	d.watchers.remove()	
 
-def install_app_with_package_name(app):
+def install_app(app):
 	for count in range(RETRY_COUNT):
 		androidSystem.openApp(app.package_name())
 
 		log_duration(wait_for_resource, TITLE_BG_RES_ID, 5000)
 
 		if d.exists(text=INCOMPATIBLE_DEVICE_ERROR):
+			d.press.back()
 			log.error(INCOMPATIBLE_DEVICE_ERROR)
 			break
 
 		if d.exists(text=APP_NOT_FOUND_ERROR):
+			d.press.back()
 			log.warn(APP_NOT_FOUND_ERROR)
 			break
 
@@ -62,12 +64,14 @@ def install_app_with_package_name(app):
 				accept()
 				if d.exists(resourceId=CANCEL_DOWNLOAD_RES_ID):
 					log_duration(wait_for_resource, UNINSTALL_RES_ID, 60000)
+					d.press.back()
 					log.info('{} was installed successfully.'.format(app.name()))
 					break
 
 			elif d.exists(resourceId=UPDATE_RES_ID):
 				update()
 		else:
+			d.press.back()
 			log.info('{} is already installed and updated.'.format(app.name()))
 			break
 	 
@@ -76,4 +80,4 @@ def install_app_with_package_name(app):
 
 for app in apps.all():
 	print 'Installing {}'.format(app.name())
-   	install_app_with_package_name(app)
+   	install_app(app)
