@@ -1,0 +1,4 @@
+Facebook Lite - com.facebook.lite
+Gmail - com.google.android.gm
+Snapchat - com.snapchat.android
+Non Existent - com.does.not.exist

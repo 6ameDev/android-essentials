@@ -1,6 +1,6 @@
 from uiautomator import device as d
 import apps
-import androidSystem
+import android_system
 import time
 import log
 
@@ -44,7 +44,7 @@ def accept():
 
 def install_app(app):
 	for count in range(RETRY_COUNT):
-		androidSystem.openApp(app.package_name())
+		android_system.openApp(app.package_name())
 
 		log_duration(wait_for_resource, TITLE_BG_RES_ID, 5000)
 

@@ -1,0 +1,45 @@
+Youtube - com.google.android.youtube
+Gmail - com.google.android.gm
+Google Calender - com.google.android.calendar
+Google Voice - com.google.android.apps.googlevoice
+Chrome Browser - com.android.chrome
+Google Translate - com.google.android.apps.translate
+Google Aero - com.google.android.apps.ondemand.consumer
+Google Play Services - com.google.android.gms
+Google Authenticator - com.google.android.apps.authenticator2
+Google Trips - com.google.android.apps.travel.onthego
+Facebook - com.facebook.katana
+Twitter - com.twitter.android
+Instagram - com.instagram.android
+Whatsapp - com.whatsapp
+Evernote - com.evernote
+Google Keep - com.google.android.keep
+Open Camera - net.sourceforge.opencamera
+SoundHound Music Search - com.melodis.midomiMusicIdentifier.freemium
+Shazam - com.shazam.android
+Photoshop Fix - com.adobe.adobephotoshopfix
+Hyperlapse - com.microsoft.hyperlapsemobile
+Memrise: Learn a new language - com.memrise.android.memrisecompanion
+VLC - org.videolan.vlc
+MX Player - com.mxtech.videoplayer.ad
+Shuttle Music Player - another.music.player
+NeedForSpeed No Limits - com.ea.game.nfs14_row
+Shadowmatic - com.triadastudio.shadowmatic
+Uber - com.ubercab
+Ola - com.olacabs.customer
+Book My Show - com.bt.bms
+Paytm - net.one97.paytm
+Faasos - com.done.faasos
+Swiggy - in.swiggy.android
+Zomato Online - com.application.zomato.ordering
+Splitwise - com.Splitwise.SplitwiseMobile
+Tunnelbear VPN - com.tunnelbear.android
+Truecaller - com.truecaller
+Night Screen - com.arrowsapp.nightscreen
+Smart Voice Recorder - com.andrwq.recorder
+Simple World Clock Widget - com.chibatching.worldclockwidget
+Currency Converter - com.oanda.currencyconverter
+Unified Remote - com.Relmtech.Remote
+DropSync - com.ttxapps.dropsync
+Mega Store Manager - ba.makrosoft.mega
+Tinder - com.tinder

@@ -8,4 +8,4 @@ class App(object):
         return self._name
 
     def package_name(self):
-        return self._package_name
+        return "market://details?id=" + self._package_name
